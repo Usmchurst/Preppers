@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Login from './components/LoginForm';
 
 function App() {
   const [username, setUsername] = useState('')
@@ -28,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <h1>Registor</h1>
+      <h1>signup</h1>
       <form onSubmit={createUser}>
         <input 
           value={username}
