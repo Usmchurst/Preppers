@@ -1,7 +1,12 @@
 const router = require('express').Router();
 
-const { imgUpload } = require('../controllers/upload')
+// const { imgUpload } = require('../controllers/upload')
 
-router.post('/imgUpload', imgUpload )
+const user = require('./User-Routes')
+
+router.use('/user', user )
+
+// router.post('/imgUpload', imgUpload )
+
 
 module.exports = router;

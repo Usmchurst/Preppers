@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
 
 function App() {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  async function createUser(event) {
+    event.preventDefault()
+
+    const res = await fetch('http://localhost:3001/user/login',{
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        username, 
+        email, 
+        password
+      })
+    })
+
+    const data = await res.json();
+
+    console.log(data)
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Registor</h1>
+      <form onSubmit={createUser}>
+        <input 
+          value={username}
+          onChange={(e)=> setUsername(e.target.value)}
+          type="text"
+          placeholder="username" 
+        /> <br/>
+       <input 
+          value={email}
+          onChange={(e)=> setEmail(e.target.value)}
+          type="email"
+          placeholder="email" 
+        /> <br/>
+        <input 
+        value={password}
+        onChange={(e)=> setPassword(e.target.value)}
+        type="password"
+        placeholder="password" 
+      /> <br/>
+      <input type='submit' value="submit"/>
+      </form>
     </div>
   );
 }
