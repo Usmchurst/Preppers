@@ -1,0 +1,56 @@
+.NavbarContainer{
+    height: 50px;
+    width: 100%;
+    Background-color: green;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.NavbarLeft {
+    Flex: 3;
+    
+}
+
+.logo {
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.NavbarCenter {
+    flex: 5;
+    position: relative;
+    
+    
+}
+
+.searchbar {
+    width: 600%;
+    height: 30px;
+    background-color:white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.searchInput {
+    width: 400px;
+    align-items: center;
+    margin-left: 200px;
+    display: flex;
+
+}
+
+.NavbarRight {
+    flex: 4;
+    
+}
+
+.NavbarImg{
+    width: 32px;
+    height: 32px;
+
+}
