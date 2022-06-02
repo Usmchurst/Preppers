@@ -1,33 +1,43 @@
 import React, { useState } from "react";
 import "./style.css";
-function RegistrationForm() {
-  const [userName, setUserName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+export default function RegistrationForm() {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    if (id === "userName") {
-      setUserName(value);
-    }
+  async function createUser(event) {
+    event.preventDefault()
 
-    if (id === "email") {
-      setEmail(value);
+    if(password !== confirmPassword) {
+      alert('Passwords must match')
+    } else {
+
+    const res = await fetch('http://localhost:3001/user/signup',{
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        username, 
+        email, 
+        password
+      })
+    })
+    const data = await res.json();
+
+    if(data){
+      alert('User signed up successfully')
+    } else {
+      console.log('error')
     }
-    if (id === "password") {
-      setPassword(value);
-    }
-    if (id === "confirmPassword") {
-      setConfirmPassword(value);
-    }
+    console.log(data)
+  }
   };
 
-  const handleSubmit = () => {
-    console.log(userName, email, password, confirmPassword);
-  };
   return (
     <div className="form">
+      <form onSubmit={createUser} >
       <div className="form-body">
         <div className="username">
           <label className="form__label" for="userName">
@@ -37,7 +47,9 @@ function RegistrationForm() {
             className="form__input"
             type="text"
             id="userName"
-            placeholder="UserName"
+            value={username}
+            onChange={(e)=> setUsername(e.target.value)}
+            placeholder="username" 
           />
         </div>
 
@@ -49,7 +61,9 @@ function RegistrationForm() {
             type="email"
             id="email"
             className="form__input"
-            placeholder="Email"
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
+            placeholder="email" 
           />
         </div>
         <div className="password">
@@ -60,7 +74,9 @@ function RegistrationForm() {
             className="form__input"
             type="password"
             id="password"
-            placeholder="Password"
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
+            placeholder="password" 
           />
         </div>
         <div className="confirm-password">
@@ -72,6 +88,8 @@ function RegistrationForm() {
             type="password"
             id="confirmPassword"
             placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e)=> setConfirmPassword(e.target.value)}
           />
         </div>
       </div>
@@ -80,7 +98,7 @@ function RegistrationForm() {
           Register
         </button>
       </div>
+      </form>
     </div>
   );
 }
-export default RegistrationForm;
