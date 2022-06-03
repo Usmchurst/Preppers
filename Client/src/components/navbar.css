@@ -1,11 +1,34 @@
 .NavbarContainer{
-    height: 50px;
+    height: auto;
     width: 100%;
     Background-color: green;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    position: sticky;
+    position: relative;
     top: 0;
+    justify-content: space-between;
+}
+
+.left{
+    margin: 10px 0px;
+    display: flex;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20%
+}
+button{
+    margin: 5px 
 }
 
 .NavbarLeft {
@@ -17,31 +40,30 @@
     font-size: 24px;
     margin-left: 20px;
     font-weight: bold;
+    margin-right: 30px
 }
 
 .NavbarCenter {
     flex: 5;
     position: relative;
-    
-    
 }
 
 .searchbar {
-    width: 600%;
+    margin-top: 5px;
+    min-width: 200px;
+    width: 30%;
     height: 30px;
     background-color:white;
     border-radius: 30px;
     display: flex;
-    align-items: center;
-    margin-left: 200px;
+    position: relative;
 }
 
 .searchInput {
-    width: 400px;
-    align-items: center;
-    margin-left: 200px;
+    position: relative;
+    width: 80%;
     display: flex;
-
+    border: none
 }
 
 .NavbarRight {
