@@ -25,7 +25,9 @@ export default function Login() {
         const data = await res.json();
         
         if(data.user){
+            localStorage.setItem('token', data.user)
             alert('login successful')
+            window.location.assign('/home')
         } else {
             alert('please check username and password')
         }
@@ -34,7 +36,6 @@ export default function Login() {
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
-
 
     return (
         <div className='Login'>
