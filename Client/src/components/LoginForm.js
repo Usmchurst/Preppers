@@ -10,7 +10,7 @@ export default function Login() {
 
     async function loginUser(event) {
         event.preventDefault()
-    
+
         const res = await fetch('http://localhost:3001/user/login',{
           method: 'POST',
           headers: {
@@ -25,7 +25,7 @@ export default function Login() {
         const data = await res.json();
         
         if(data.user){
-            localStorage.setItem('token', data.user)
+            localStorage.setItem('token', data.token)
             alert('login successful')
             window.location.assign('/home')
         } else {

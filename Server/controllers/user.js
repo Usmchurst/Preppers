@@ -1,5 +1,42 @@
 const { User } = require('../models')
 
-const userControllers = { }
+const { signToken } = require('../utils/auth');
 
-module.exports = userController;
+module.exports = {
+    
+    async createUser(req, res) {
+      
+            const user = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+        });
+        
+        if (!user) {
+            return res.status(400);
+        }
+        const token = signToken(user);
+
+       return res.json({ token, user, status: 'ok' });
+      
+    },
+
+    async login(req, res) {
+        
+            const user = await User.findOne({ email: req.body.email });
+            
+            if (!user) {
+            return res.status(400);
+            }
+        
+            const correctPw = await user.isCorrectPassword(req.body.password);
+            console.log(correctPw)
+        
+            if (!correctPw) {
+            return res.status(400);
+            }
+            const token = signToken(user);
+            res.json({ token, user });
+        
+    }   
+}

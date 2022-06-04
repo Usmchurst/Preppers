@@ -25,11 +25,12 @@ export default function RegistrationForm() {
       })
     })
     const data = await res.json();
+    console.log(data.status)
 
     if(data.status === 'ok') {
-      localStorage.setItem('token', data.user)
+      localStorage.setItem('token', data.token)
       alert('User signed up successfully')
-      window.location.assign('/login')
+      window.location.assign('/home')
     } else {
       alert('User not signed up successfully, please try again')
     }
