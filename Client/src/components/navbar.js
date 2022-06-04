@@ -4,25 +4,33 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import jwt from 'jwt-decode'
+import jwt_decode from 'jwt-decode'
+import { Link } from 'react-router-dom';
+import auth from '../utils/auth'
+
+
 
 export default function Navbar() {
 
     async function renderHome() {
+
         const req =  await fetch('http://localhost:3001/home', {
             headers: {
                 'x-access-token': localStorage.getItem('token')
             },
         })
-
         const data = req.json()
-        console.log(data)
+        data.then(res => {
+            
+        })
+        return data
     }
+
 
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {
-            const user = jwt.decode(token)
+            const user = jwt_decode(token)
             if(!user) {
                 localStorage.removeItem('token')
                 window.location.assign('/login')
@@ -70,13 +78,15 @@ export default function Navbar() {
         <div className="right">
              <div className="NavbarRight"></div>
                 <div className="navbarLinks">
-                    <button className="navbarLink">Homepage</button>
-                    {/* {loggedIn ? 
-                    <button className="navbarLink">Logout</button> :
+                <Link to="/home"><button className="navbarLink">Homepage</button></Link>
+                    { auth.loggedIn() ? (
+                    <button onClick={auth.logout} className="navbarLink">Logout</button> 
+                    ) : (
                     <>
-                    <button className="navbarLink">Login</button>
-                    <button className="navbarLink">Signup</button> 
-                    </>} */}
+                    <Link to="/login"><button className="navbarLink" >Login</button></Link>
+                    <Link to="/signup"><button className="navbarLink">Signup</button></Link>
+                    </>
+                    )}
                  </div>
         </div>        
                 
