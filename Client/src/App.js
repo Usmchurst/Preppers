@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/LoginForm'; 
 import RegistrationForm from "./components/registrationForm";
-import Navbar from './components/navbar'
+import Homepage from './pages/homepage'
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-        <Route path="/home"  element={<Navbar />}  />
+        <Route path="/home"  element={<Homepage />}  />
           <Route path="/login"  element={<Login />}  />
           <Route path="/signup" element={<RegistrationForm />} />
         </Routes> 

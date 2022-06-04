@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import "./navbar.css";
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import jwt_decode from 'jwt-decode'
+// import jwt_decode from 'jwt-decode'
 import { Link } from 'react-router-dom';
 import auth from '../utils/auth'
 
@@ -12,33 +12,33 @@ import auth from '../utils/auth'
 
 export default function Navbar() {
 
-    async function renderHome() {
+    // async function renderHome() {
 
-        const req =  await fetch('http://localhost:3001/home', {
-            headers: {
-                'x-access-token': localStorage.getItem('token')
-            },
-        })
-        const data = req.json()
-        data.then(res => {
+    //     const req =  await fetch('http://localhost:3001/home', {
+    //         headers: {
+    //             'x-access-token': localStorage.getItem('token')
+    //         },
+    //     })
+    //     const data = req.json()
+    //     data.then(res => {
             
-        })
-        return data
-    }
+    //     })
+    //     return data
+    // }
 
 
-    useEffect(() => {
-        const token = localStorage.getItem('token')
-        if (token) {
-            const user = jwt_decode(token)
-            if(!user) {
-                localStorage.removeItem('token')
-                window.location.assign('/login')
-            } else {
-                renderHome()
-            }
-        }
-    }, []) 
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token')
+    //     if (token) {
+    //         const user = jwt_decode(token)
+    //         if(!user) {
+    //             localStorage.removeItem('token')
+    //             window.location.assign('/login')
+    //         } else {
+    //             renderHome()
+    //         }
+    //     }
+    // }, []) 
 
     return (
         <div className="NavbarContainer">
