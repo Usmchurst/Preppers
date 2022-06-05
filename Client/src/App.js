@@ -7,6 +7,7 @@ import RegistrationForm from "./components/registrationForm";
 import Homepage from './pages/home'
 import Profile from './pages/profile'
 
+
 function App() {
   return (
     <div>
