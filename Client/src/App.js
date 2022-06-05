@@ -4,6 +4,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/LoginForm'; 
 import RegistrationForm from "./components/registrationForm";
+import Navbar from './components/navbar'
+import Home from './pages/A'
 import Homepage from './pages/homepage'
 
 
@@ -12,6 +14,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+        <Route path="/home"  element={<Home />}  />
         <Route path="/home"  element={<Homepage />}  />
           <Route path="/login"  element={<Login />}  />
           <Route path="/signup" element={<RegistrationForm />} />
