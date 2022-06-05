@@ -1,7 +1,10 @@
 import decode from 'jwt-decode';
 
 class AuthService {
-
+  getToken() {
+    // Retrieves the user token from localStorage
+    return localStorage.getItem('token');
+  }
   // check if user's logged in
   loggedIn() {
     const token = localStorage.getItem('token');

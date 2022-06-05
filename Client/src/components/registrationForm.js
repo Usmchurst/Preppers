@@ -25,7 +25,7 @@ export default function RegistrationForm() {
       })
     })
     const data = await res.json();
-    console.log(data.status)
+
 
     if(data.status === 'ok') {
       localStorage.setItem('token', data.token)
