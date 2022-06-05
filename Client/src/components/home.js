@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import { getMe } from '../utils/user';
 import Avatar from '@mui/material/Avatar';
+import LikeButton from './LikeButton/LikeButton';
 
  function Homepage() {
   
@@ -43,6 +44,11 @@ import Avatar from '@mui/material/Avatar';
       
         <div>
             <h1>hello {userData.email}</h1>
+            <section>
+              <article>
+                <LikeButton/>
+              </article>
+            </section>
             
     
       
