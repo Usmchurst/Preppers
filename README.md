@@ -50,4 +50,4 @@ Jonathan Jones -  https://github.com/Jjones2022
 
 ## Deployed link
 
-Heroku link: 
+Heroku link: https://git.heroku.com/preppersapp.git
