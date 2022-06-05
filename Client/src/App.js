@@ -6,6 +6,7 @@ import Login from './components/LoginForm';
 import RegistrationForm from "./components/registrationForm";
 import Homepage from './pages/home'
 import Profile from './pages/profile'
+import AddPost from './pages/addPost'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login"  element={<Login />}  />
           <Route path="/signup" element={<RegistrationForm />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/newpost" element={<AddPost />} />
         </Routes> 
       </BrowserRouter>
     </div>
