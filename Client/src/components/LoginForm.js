@@ -27,7 +27,7 @@ export default function Login() {
         if(data.user){
             localStorage.setItem('token', data.token)
             alert('login successful')
-            window.location.assign('/home')
+            window.location.assign('/')
         } else {
             alert('please check username and password')
         }

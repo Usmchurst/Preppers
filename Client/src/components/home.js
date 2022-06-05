@@ -36,9 +36,10 @@ import { getMe } from '../utils/user';
       }, [userDataLength]);
 
    
+   
     return (
         <div>
-            <h1>hello</h1>
+            <h1>hello {userData.email}</h1>
         </div>
     )
 };

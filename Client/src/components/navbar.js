@@ -3,43 +3,13 @@ import "./navbar.css";
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-// import jwt_decode from 'jwt-decode'
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import { Link } from 'react-router-dom';
 import auth from '../utils/auth'
 
 
 
 export default function Navbar() {
-
-    // async function renderHome() {
-
-    //     const req =  await fetch('http://localhost:3001/home', {
-    //         headers: {
-    //             'x-access-token': localStorage.getItem('token')
-    //         },
-    //     })
-    //     const data = req.json()
-    //     data.then(res => {
-            
-    //     })
-    //     return data
-    // }
-
-
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token')
-    //     if (token) {
-    //         const user = jwt_decode(token)
-    //         if(!user) {
-    //             localStorage.removeItem('token')
-    //             window.location.assign('/login')
-    //         } else {
-    //             renderHome()
-    //         }
-    //     }
-    // }, []) 
-
     return (
         <div className="NavbarContainer">
         <div className="left">
@@ -54,22 +24,13 @@ export default function Navbar() {
 
         <div className="center">
             <div>
-                <div className="navbarIcons"></div> 
-                <div className="navbarIconItem"></div> 
-                <PersonIcon/>
-                <span className="navbarIconBadge">1</span>
+                <Link to="/profile"><PersonIcon/></Link>
             </div>
             <div>
-                <div className="navbarIcons"></div> 
-                <div className="navbarIconItem"></div> 
                 <ChatIcon/>
-                <span className="navbarIconBadge">2</span>
             </div>
             <div>
-                <div className="navbarIcons"></div> 
-                <div className="navbarIconItem"></div> 
-                <NotificationsIcon/>
-                <span className="navbarIconBadge">1</span>
+                <AddAPhotoIcon />
             </div>
 
                 <img src="/assets/people/img/prep.jpg  " alt="" className="navbarImg"/>    
@@ -78,7 +39,7 @@ export default function Navbar() {
         <div className="right">
              <div className="NavbarRight"></div>
                 <div className="navbarLinks">
-                <Link to="/home"><button className="navbarLink">Homepage</button></Link>
+                <Link to="/"><button className="navbarLink">Homepage</button></Link>
                     { auth.loggedIn() ? (
                     <button onClick={auth.logout} className="navbarLink">Logout</button> 
                     ) : (

@@ -1,7 +1,7 @@
 .NavbarContainer{
     height: auto;
     width: 100%;
-    Background-color: green;
+    Background-color: rgb(7, 95, 7);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
