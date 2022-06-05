@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+
 export default function RegistrationForm() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -30,7 +31,7 @@ export default function RegistrationForm() {
     if(data.status === 'ok') {
       localStorage.setItem('token', data.token)
       alert('User signed up successfully')
-      window.location.assign('/home')
+      window.location.assign('/')
     } else {
       alert('User not signed up successfully, please try again')
     }
