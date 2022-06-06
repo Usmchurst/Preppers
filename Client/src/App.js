@@ -8,7 +8,7 @@ import Home from './pages/home'
 import Profile from './pages/profile'
 import AddPost from './pages/addPost'
 import Textarea from "./components/Textarea";
-import io from "socket.io-client";
+// import io from "socket.io-client";
 // const socket = io.connect("http://localhost:3001");
 
 function App() {

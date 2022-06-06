@@ -7,7 +7,7 @@ import LikeButton from './LikeButton/LikeButton';
  function Homepage() {
   
     const [userData, setUserData] = useState({});
-    const [posts, setPosts] = useState({})
+    const [posts, setPosts] = useState([])
 
     const userDataLength = Object.keys(userData).length;
 
@@ -49,32 +49,32 @@ import LikeButton from './LikeButton/LikeButton';
           }
           const items= await data.json();
           setPosts(items);
-          console.log(items)
+        
         }
         getUserData();
         getAllPosts();
       }, [userDataLength]);
-   
+      console.log(posts)
     return (
       
         <div>
             <h1>hello {userData.email}</h1>
-            <section>
-              <article>
-                <LikeButton/>
-              </article>
-            </section>
-            
-    
-      
-  
-       {/* {posts.map((post) =>{
+       {posts.map((post) =>{
          return(
         <div>
-          {post.postName}
+          {post.username}
+          <div>
+            {post.postName}
+          </div>
+          <div>
+          {post.postBody}
+          </div>
+          <div>
+          <LikeButton/>
+          </div>
         </div>
        )})
-     } */}
+     }
 
 
     </div>

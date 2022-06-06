@@ -29,7 +29,7 @@ export default function Navbar() {
                     <Link to="/profile"><PersonIcon/></Link>
                 </div>
                 <div>
-                    <ChatIcon/>
+                <Link to="/chat"><ChatIcon/></Link>
                 </div>
                 <div>
                     <Link to="/newpost"><AddAPhotoIcon /></Link>
