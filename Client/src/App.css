@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,5 +40,46 @@
 
 .profileBody {
   height: 100vh;
-  background-color: rgb(193, 201, 185);
+  background-color: rgb(255, 255, 255);
+}
+
+.card {
+  border: none;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+}
+
+.card:before {
+
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #61dafb;
+  transform: scaleY(1);
+  transition: all 0.5s;
+  transform-origin: bottom
+}
+
+.card:after {
+
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #1db1da;
+  transform: scaleY(0);
+  transition: all 0.5s;
+  transform-origin: bottom
+}
+
+.card:hover::after {
+  transform: scaleY(1);
 }
