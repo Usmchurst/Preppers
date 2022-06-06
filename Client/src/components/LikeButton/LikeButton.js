@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import cn from "classnames";
-// import './styles.scss';
+import './styles.scss';
 
 const particleList =Array.from(Array(10));
 
