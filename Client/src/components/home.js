@@ -7,10 +7,13 @@ import LikeButton from './LikeButton/LikeButton';
  function Homepage() {
   
     const [userData, setUserData] = useState({});
+    const [posts, setPosts] = useState({})
 
     const userDataLength = Object.keys(userData).length;
 
     useEffect(() => {
+
+
         const getUserData = async () => {
        
           try {
@@ -29,16 +32,28 @@ import LikeButton from './LikeButton/LikeButton';
             }
             const user = await response.json();
             setUserData(user);
-            
           } catch (err) {
             console.error(err);
           }
         };
-    
+      
+        async function getAllPosts(){
+          
+           const data = await fetch('http://localhost:3001/post/posts',{
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+          if (!data.ok) {
+            throw new Error('something went wrong!');
+          }
+          const items= await data.json();
+          setPosts(items);
+          console.log(items)
+        }
         getUserData();
+        getAllPosts();
       }, [userDataLength]);
-
-   
    
     return (
       
@@ -52,26 +67,14 @@ import LikeButton from './LikeButton/LikeButton';
             
     
       
-     {/* {
-       userData.posts.map(post => (
-        <div className="post">
-        <div className="post_header">
-            
-        <Avatar
-        className="post_avatar"
-        alt='Steve'
-        src="/static/images/avatar/1.jpg"
-       />     
-        <h3>{}</h3>
+  
+       {/* {posts.map((post) =>{
+         return(
+        <div>
+          {post.postName}
         </div>
-       {/* { Header, avatar, username}  */}
-       {/* <img className="post_image" src={} alt=""/> */}
-       
-        {/* <h4 className="post_text"><strong>{}</strong> {} </h4>
-       
-    </div>
-       ))
-     } */} 
+       )})
+     } */}
 
 
     </div>

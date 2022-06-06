@@ -11,7 +11,7 @@ const userSchema = new Schema(
       email: {
         type: String,
         required: true,
-        match: /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/,
+        match: /.+@.+\..+/,
         unique: true
       },
       password:{
@@ -19,7 +19,10 @@ const userSchema = new Schema(
         required: true,
         minlength: 8
       },
-      Posts: [
+      profilePhotoUrl:{
+        type: String,
+      },
+      posts: [
         {
           type: Schema.Types.ObjectId,
           ref: 'Post',
@@ -41,6 +44,10 @@ const userSchema = new Schema(
 
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
+});
+
+userSchema.virtual('postCount').get(function () {
+  return this.posts.length;
 });
 
 userSchema.pre('save', async function (next) {

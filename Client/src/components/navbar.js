@@ -23,17 +23,21 @@ export default function Navbar() {
         </div>
 
         <div className="center">
-            <div>
-                <Link to="/profile"><PersonIcon/></Link>
-            </div>
-            <div>
-                <ChatIcon/>
-            </div>
-            <div>
-                <AddAPhotoIcon />
-            </div>
-
-                <img src="/assets/people/img/prep.jpg  " alt="" className="navbarImg"/>    
+            { auth.loggedIn() ? (
+                <>
+                <div>
+                    <Link to="/profile"><PersonIcon/></Link>
+                </div>
+                <div>
+                    <ChatIcon/>
+                </div>
+                <div>
+                    <Link to="/newpost"><AddAPhotoIcon /></Link>
+                </div>
+                </>
+                ) : <></>
+            }
+      
             </div>
 
         <div className="right">
