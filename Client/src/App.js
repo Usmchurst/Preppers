@@ -7,7 +7,10 @@ import RegistrationForm from "./components/registrationForm";
 import Navbar from './components/navbar'
 import Home from './pages/A'
 import Homepage from './pages/homepage'
+import Textarea from './components/Textarea'
+import io from "socket.io-client";
 
+const socket = io.connect("http://localhost:3001");
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
         <Route path="/home"  element={<Homepage />}  />
           <Route path="/login"  element={<Login />}  />
           <Route path="/signup" element={<RegistrationForm />} />
+          <Route path="/Chat" element={<Textarea />} />
         </Routes> 
       </BrowserRouter>
     </div>
