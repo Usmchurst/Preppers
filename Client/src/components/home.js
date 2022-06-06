@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import auth from '../utils/auth';
 import { getMe } from '../utils/user';
+import Avatar from '@mui/material/Avatar';
+import LikeButton from './LikeButton/LikeButton';
 
  function Homepage() {
+  
     const [userData, setUserData] = useState({});
 
     const userDataLength = Object.keys(userData).length;
@@ -38,10 +41,41 @@ import { getMe } from '../utils/user';
    
    
     return (
+      
         <div>
             <h1>hello {userData.email}</h1>
+            <section>
+              <article>
+                <LikeButton/>
+              </article>
+            </section>
+            
+    
+      
+     {/* {
+       userData.posts.map(post => (
+        <div className="post">
+        <div className="post_header">
+            
+        <Avatar
+        className="post_avatar"
+        alt='Steve'
+        src="/static/images/avatar/1.jpg"
+       />     
+        <h3>{}</h3>
         </div>
-    )
+       {/* { Header, avatar, username}  */}
+       {/* <img className="post_image" src={} alt=""/> */}
+       
+        {/* <h4 className="post_text"><strong>{}</strong> {} </h4>
+       
+    </div>
+       ))
+     } */} 
+
+
+    </div>
+  )  
 };
 
 export default Homepage

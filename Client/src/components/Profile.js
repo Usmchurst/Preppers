@@ -40,13 +40,55 @@ import { getMe } from '../utils/user';
    
     return (
         <div className='profileBody'>
-           <h1>Hello {userData.username}</h1>
-           <h2>{userData.friendCount} Friends</h2>
+           
+           
+           <div class="container mt-5">
+    
+    <div class="row d-flex justify-content-center">
+        
+        <div class="col-md-7">
+            
+            <div class="card p-3 py-4">
+                
+                <div class="text-center">
+                    <img src="https://i.imgur.com/bDLhJiP.jpg" alt="profile" width="100" class="rounded-circle" /> 
+                </div>
+                
+                <div class="text-center mt-3">
+                  
+                    <h5 class="mt-2 mb-0">Alex Jones</h5>
+                    
+                    
+           <h2>{userData.friendCount} Friends:</h2>
            <h2>Email: {userData.email}</h2>
            <h2>{userData.postCount} Posts</h2>
             <div>      
               
             </div>
+                    
+                    
+                    
+                     
+                    
+                </div>
+                
+               
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+           {/* <div>      
+               {userData.posts.map(({postName, imageUrl,  postBody, createdAt,  username}, index) => (
+                    
+
+                       
+                  ))}
+            </div> */}
         </div>
     )
 };
