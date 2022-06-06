@@ -1,11 +1,9 @@
 const router = require('express').Router();
+const { Post } = require('../../models')
 require('dotenv').config()
 const {
   getPosts,
-  getSinglePost,
   createPost,
-  updatePost,
-  deletePost,
   addReaction,
   removeReaction,
 } = require('../../controllers/post');
@@ -29,6 +27,35 @@ router.post('/', async (req, res) => {
       }
   })
 
+  router.put('/like', async (req, res) => {
+    try {
+        Post.findByIdAndUpdate(req.body.postId, { 
+            $push:{likes: req.user._Id}
+
+        },{
+            new: true,
+        })
+        .then(res = res.json())
+    } catch (err) {
+        return res.json({error:err})
+    }
+    });
+
+    router.put('/unlike', async (req, res) => {
+        try {
+            Post.findByIdAndUpdate(req.body.postId, { 
+                $pull:{likes: req.user._Id}
+    
+            },{
+                new: true,
+            })
+            .then(res = res.json())
+        } catch (err) {
+            return res.json({error:err})
+        }
+        });
+        
+    
   router.route('/posts').get(getPosts).post(createPost);
 
 module.exports = router
