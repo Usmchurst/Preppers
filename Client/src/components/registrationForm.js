@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import "./style.css";
 import background from "./public/corona.jpg";
+const styles = {
+  form:{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  words: {
+    textAlign: 'center',
+    color: '#d7dbcc'
+  }
+}
 
 export default function RegistrationForm() {
   const [username, setUsername] = useState('')
@@ -53,16 +64,22 @@ export default function RegistrationForm() {
     return (
     
     <div style={style}>
-
-
-     
-     <div className="form" style={{"padding":"20px"}}>
+      
+      <div style={styles.words}>
+        <div style={{"font-size": "36px","color":"#def2a2",}} >
+            Preppers    
+        </div>
+        <div style={{"font-size": "36px","color":"#def2a2",}}>
+            Staying in touch with those who are prepared
+            for society breaking down.
+        </div>
+      </div>
+     <div >
+     <div className="form" style={styles.form}>
       <form onSubmit={createUser} >
       <div className="form-body">
         <div className="username">
-          <label className="form__label" for="userName">
-            User Name{" "}
-          </label>
+          
           <input
             className="form__input"
             type="text"
@@ -73,10 +90,8 @@ export default function RegistrationForm() {
           />
         </div>
 
-        <div className="email" style={{"position":"relative","left":"42px"}}>
-          <label className="form__label" for="email">
-            Email{" "}
-          </label>
+        <div className="email" >
+         
           <input
             type="email"
             id="email"
@@ -86,10 +101,8 @@ export default function RegistrationForm() {
             placeholder="email" 
           />
         </div>
-        <div className="password" style={{"position":"relative","left":"11px"}}>
-          <label className="form__label" for="password">
-            Password{" "}
-          </label>
+        <div className="password">
+         
           <input
             className="form__input"
             type="password"
@@ -99,10 +112,8 @@ export default function RegistrationForm() {
             placeholder="password" 
           />
         </div>
-        <div className="confirm-password"style={{"position":"relative","right":"51px"}}>
-          <label className="form__label" for="confirmPassword">
-            Confirm Password{" "}
-          </label>
+        <div className="confirm-password">
+          
           <input
             className="form__input"
             type="password"
@@ -113,23 +124,14 @@ export default function RegistrationForm() {
           />
         </div>
       </div>
-      <div style={{"font-size": "96px","color":"white","padding":"20px"}}>
-            Preppers    
-        </div>
-        
-
-
-        <div style={{"font-size": "36px","color":"white","padding":"20px"}}>
-            Staying in touch with those who are prepared
-            for society breaking down.
-        </div>
       
-      <div class="footer">
+      <div>
         <button type="submit" class="btn">
           Register
         </button>
       </div>
       </form> 
+      </div>
     </div>
    
 
