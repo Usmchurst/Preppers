@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Preppers
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+For this project a group of 4 people collaborated to create a full-stack application using react. Our team wanted to make an app where people can connect and communicate with many others to help and prepare for potential emergencies or disasters.
 
-### `npm start`
+The app features a login/ registration system and a timeline of post that are shown vertically on the screen. User's registration information is saved to our database. There is also an "add a friend" system implemented in our app. Much like other social apps, our app features a direct messages page, that allows users to privately chat will another user.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Statement
 
-### `npm test`
+As a user 
+I WANT to connect with friends, family and others
+SO THAT I can be informed about potential disasters, view post from other members, and share my own thoughts and opinions on certain situations happening around the world.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Technologies used for this project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*React
+*Bootstrap
+*CSS
+*MongoDB
+*JWT-decode
+*Bcrypt
+*Cloudinary
+*Chatengine.io
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+*Mobile-responsive design
+*Login/Signup system
+*Create post
+*Like post feature
+*Login authentication
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Figma mockup
+link: https://www.figma.com/file/b45CYjf6mrhSOuPiJFj8mT/Prepper-social-app?node-id=0%3A1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Members
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Noah Gaston -  https://github.com/LILWill13
+Eric Hurst -   https://github.com/Usmchurst
+Jalen Atkinson -  https://github.com/JalenAtkinson12
+Jonathan Jones -  https://github.com/Jjones2022
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployed link
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Heroku link: https://git.heroku.com/preppersapp.git

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import background from "./public/corona.jpg";
 
 export default function RegistrationForm() {
   const [username, setUsername] = useState('')
@@ -37,9 +38,25 @@ export default function RegistrationForm() {
     }
   }
   };
+   
+  function LandingFrame() {
+    const style = {
 
-  return (
-    <div className="form">
+        "background-image": "url(" + background + ")" ,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        position: "absolute",
+        height: "100%",
+        width: "100%"
+    }
+
+    return (
+    
+    <div style={style}>
+
+
+     
+     <div className="form" style={{"padding":"20px"}}>
       <form onSubmit={createUser} >
       <div className="form-body">
         <div className="username">
@@ -56,7 +73,7 @@ export default function RegistrationForm() {
           />
         </div>
 
-        <div className="email">
+        <div className="email" style={{"position":"relative","left":"42px"}}>
           <label className="form__label" for="email">
             Email{" "}
           </label>
@@ -69,7 +86,7 @@ export default function RegistrationForm() {
             placeholder="email" 
           />
         </div>
-        <div className="password">
+        <div className="password" style={{"position":"relative","left":"11px"}}>
           <label className="form__label" for="password">
             Password{" "}
           </label>
@@ -82,7 +99,7 @@ export default function RegistrationForm() {
             placeholder="password" 
           />
         </div>
-        <div className="confirm-password">
+        <div className="confirm-password"style={{"position":"relative","right":"51px"}}>
           <label className="form__label" for="confirmPassword">
             Confirm Password{" "}
           </label>
@@ -96,12 +113,36 @@ export default function RegistrationForm() {
           />
         </div>
       </div>
+      <div style={{"font-size": "96px","color":"white","padding":"20px"}}>
+            Preppers    
+        </div>
+        
+
+
+        <div style={{"font-size": "36px","color":"white","padding":"20px"}}>
+            Staying in touch with those who are prepared
+            for society breaking down.
+        </div>
+      
       <div class="footer">
         <button type="submit" class="btn">
           Register
         </button>
       </div>
-      </form>
+      </form> 
     </div>
+   
+
+
+        
+    </div>
+    )
+
+    
+}
+
+
+  return (
+    <LandingFrame />
   );
 }

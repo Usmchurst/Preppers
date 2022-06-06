@@ -30,6 +30,7 @@ import { getMe } from '../utils/user';
           } catch (err) {
             console.error(err);
           }
+          console.log(userData)
         };
     
         getUserData();
@@ -42,13 +43,10 @@ import { getMe } from '../utils/user';
            <h1>Hello {userData.username}</h1>
            <h2>{userData.friendCount} Friends</h2>
            <h2>Email: {userData.email}</h2>
-           {/* <div>      
-               {userData.posts.map(({postName, imageUrl,  postBody, createdAt,  username}, index) => (
-                    
-
-                       
-                  ))}
-            </div> */}
+           <h2>{userData.postCount} Posts</h2>
+            <div>      
+              
+            </div>
         </div>
     )
 };

@@ -1,14 +1,12 @@
 const router = require('express').Router();
 
-// const { imgUpload } = require('../controllers/upload')
-
 const user = require('./User-Routes')
 const home = require('./Home-Routes')
+const post = require('./Post-Routes')
 
 router.use('/user', user )
 router.use('/home', home )
-
-// router.post('/imgUpload', imgUpload )
+router.use('/post', post )
 
 
 module.exports = router;
